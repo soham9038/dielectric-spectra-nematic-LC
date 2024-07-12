@@ -1,0 +1,13 @@
+#
+# Box
+#
+
+tolerance 2.0
+filetype pdb
+output box.pdb
+
+
+structure scb_up.pdb
+  number 200
+  inside box 0. 0. 0. 70. 70. 70.
+end structure
