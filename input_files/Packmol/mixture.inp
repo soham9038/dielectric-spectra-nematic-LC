@@ -7,7 +7,7 @@ filetype pdb
 output box.pdb
 
 
-structure scb_up.pdb
-  number 200
+structure scb.pdb
+  number 450
   inside box 0. 0. 0. 70. 70. 70.
 end structure
