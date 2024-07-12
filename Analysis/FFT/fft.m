@@ -1,3 +1,6 @@
+% x-axis in Hz
+% y-axis needs to be normalized and rescaled according to the theory
+
 clear all
 clc
 
@@ -22,7 +25,7 @@ Fs=1/T;
 X=[X 0.*X];
 Y = fft(X);
 
-P2 = real(Y/L);
+P2 = real(Y/L); % change to -imag(Y/L) to calculate the imaginary/loss part
 P1 = P2(1:L/2+1);
 P1(2:end-1) = 2*P1(2:end-1);
 
@@ -33,7 +36,7 @@ title("Single-Sided Amplitude Spectrum of X(t)")
 xlabel("f (Hz)")
 ylabel("|P1(f)|")
 
-fileID = fopen('realpart.txt','w');
+fileID = fopen('realpart.txt','w'); % change the name accordingly
 fprintf(fileID,'%6s %12s\n','f','P1');
 fprintf(fileID,'%6.2f %12.8f\n',A);
 fclose(fileID);
